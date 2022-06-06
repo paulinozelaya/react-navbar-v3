@@ -2,6 +2,24 @@ import { FaBars } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const NavbarContainer = styled.nav`
+  width: 100%;
+  height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 900px) {
+    height: 80px;
+  }
+`;
+export const NavbarInnerContainer = styled.div`
+  width: 100%;
+  height: 80px;
+  display: flex;
+
+`;
+
 export const Nav = styled.nav`
   background: #000;
   height: 80px;
@@ -32,8 +50,8 @@ export const Bars = styled(FaBars)`
   display: none;
   color: #fff;
 
-  @media screen and (max-width: 768px) {
-    display: block;
+  @media screen and (max-width: 800px) {
+    display: flex;
     position: absolute;
     top: 0;
     right: 0;
@@ -46,7 +64,7 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
+  margin-left: 18%;
 
   /* Second Nav */
   /* margin-right: 24px; */
@@ -55,7 +73,7 @@ export const NavMenu = styled.div`
   /* width: 100vw;
   white-space: nowrap; */
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -63,20 +81,20 @@ export const NavMenu = styled.div`
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  margin-left: 20%;
 
   /* Third Nav */
   /* justify-content: flex-end;
   width: 100vw; */
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
 
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
-  background: #256ce1;
+  background: #00d8ff;
   padding: 10px 22px;
   color: #fff;
   outline: none;
@@ -93,4 +111,21 @@ export const NavBtnLink = styled(Link)`
     background: #fff;
     color: #010606;
   }
+`;
+export const NavbarExtendedContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+`;
+
+export const NavbarLinkExtended = styled(Link)`
+  color: white;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin: 20px;
 `;

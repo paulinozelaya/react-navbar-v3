@@ -1,24 +1,23 @@
-import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './pages';
-import About from './pages/about';
-import Services from './pages/services';
-import Contact from './pages/contact';
+import React, { useEffect, useState } from 'react'
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/index';
+import Video from './pages/video';
+import Image from './pages/image';
+import Music from './pages/music';
 import SignUp from './pages/signup';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/services' component={Services} />
-        <Route path='/contact-us' component={Contact} />
-        <Route path='/sign-up' component={SignUp} />
-      </Switch>
+      <Routes>
+        <Route path='/' exact element={<Home/>} />
+        <Route path='/video' element={<Video/>} />
+        <Route path='/image' element={<Image/>} />
+        <Route path='/music' element={<Music/>} />
+        <Route path='/sign-up' element={<SignUp/>} />
+      </Routes>
     </Router>
   );
 }
