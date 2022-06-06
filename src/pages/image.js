@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Wave from 'react-wavify'
 import axios from 'axios'
-import './css/image.css'
+import {
+  divSe
+}from './css/imageElement';
 
 const Image = () => {
     const [loading, setLoading] = useState(false)
@@ -27,10 +29,10 @@ const Image = () => {
         {loading && "Cargando..."}
         {!!data && data.length > 0 ? data.map((product) => {
             return(          
-              <div className="separador">
+              <divSe>
               <p>Author:{product.author}</p>
               <img src={product.download_url} width={400} height={330}/>             
-              </div>
+              </divSe>
             )  
              
           }):(<p>API no retornado ningún producto, intentalo nuevamente.</p>)
